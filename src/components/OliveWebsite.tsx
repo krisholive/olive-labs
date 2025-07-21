@@ -11,15 +11,19 @@ export default function OliveWebsite() {
 
       {/* Hero Section with Video Background Placeholder */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden py-20">
-        {/* Background Video Placeholder */}
+        {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <VideoPlaceholder 
-            title="Hero Background Video"
-            description="Immersive background video showcasing data visualization"
-            aspectRatio="16:9"
-            size="xl"
-            showControls={false}
-          />
+          <video
+            className="w-full h-full object-cover"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="/hero-background.mp4" type="video/mp4" />
+            {/* Fallback for browsers that don't support video */}
+            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
+          </video>
         </div>
         
         {/* Hero Content */}
@@ -127,12 +131,16 @@ export default function OliveWebsite() {
           
           {/* Demo Video */}
           <div className="mb-12">
-            <VideoPlaceholder 
-              title="Nuggets™ Demo Video"
-              description="Watch how Nuggets transforms raw data into actionable insights"
-              aspectRatio="16:9"
-              size="lg"
-            />
+            <video
+              className="w-full aspect-video rounded-lg shadow-2xl"
+              controls
+              poster="/nuggets-demo-thumbnail.jpg"
+            >
+              <source src="/nuggets-demo.mp4" type="video/mp4" />
+              <div className="w-full aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
+                <p className="text-gray-400">Your browser doesn't support video playback</p>
+              </div>
+            </video>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
