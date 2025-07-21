@@ -10,7 +10,7 @@ export default function OliveWebsite() {
     <div className="bg-black text-white font-sans">
 
       {/* Hero Section with Video Background Placeholder */}
-      <section className="h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden py-20">
         {/* Background Video Placeholder */}
         <div className="absolute inset-0 z-0">
           <VideoPlaceholder 
@@ -50,7 +50,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* Why Olive Section */}
-      <section className="bg-white text-black py-20 px-10 relative">
+      <section className="min-h-screen bg-white text-black py-20 px-10 relative flex flex-col justify-center">
         <div className="absolute top-10 right-10">
           <AnimationPlaceholder 
             type="sparkles" 
@@ -116,7 +116,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* Nuggets Section with Demo Video */}
-      <section className="py-20 px-10 bg-gray-900 relative">
+      <section className="min-h-screen py-20 px-10 bg-gray-900 relative flex flex-col justify-center">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
             Nuggets™: From Chaos to Clarity
@@ -155,7 +155,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 px-10 bg-white text-black">
+      <section className="min-h-screen py-20 px-10 bg-white text-black flex flex-col justify-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Built for Two Worlds</h2>
         <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           <Card className="card-interactive border-primary/20 hover:border-primary/40">
@@ -191,7 +191,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* Feature Comparison Section */}
-      <section className="py-20 px-10 bg-gray-100 text-black">
+      <section className="min-h-screen py-20 px-10 bg-gray-100 text-black flex flex-col justify-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
           What Olive Can Do That Other Tools Can't
         </h2>
@@ -215,7 +215,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-20 px-10 bg-white text-black">
+      <section className="min-h-screen py-20 px-10 bg-white text-black flex flex-col justify-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">From Question to Clarity in Seconds</h2>
         <div className="grid md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
           {[
@@ -243,7 +243,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* Security Section */}
-      <section className="py-20 px-10 bg-gray-900">
+      <section className="min-h-screen py-20 px-10 bg-gray-900 flex flex-col justify-center">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Built for Trust from Day One</h2>
         <div className="grid md:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
           {[
@@ -263,7 +263,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* Patent Section */}
-      <section className="py-20 px-10 bg-white text-black text-center">
+      <section className="min-h-screen py-20 px-10 bg-white text-black text-center flex flex-col justify-center">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
             <AnimationPlaceholder 
@@ -282,7 +282,7 @@ export default function OliveWebsite() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 px-10 bg-black text-white text-center relative overflow-hidden">
+      <section className="min-h-screen py-20 px-10 bg-black text-white text-center relative overflow-hidden flex flex-col justify-center">
         <div className="absolute inset-0 gradient-olive-dark opacity-20"></div>
         <div className="relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">See Olive in Action</h2>
