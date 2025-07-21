@@ -218,11 +218,11 @@ const slides = [
         
         {/* Prominent Nugget Image */}
         <div className="mb-8 flex justify-center">
-          <div className="max-w-4xl w-full">
+          <div className="max-w-2xl w-full">
             <img 
               src="/lovable-uploads/29fba273-b257-48f2-9f6c-2cf644767b3b.png" 
               alt="Nuggets Recommended Insight" 
-              className="w-full rounded-lg shadow-lg border"
+              className="w-3/5 mx-auto rounded-lg shadow-lg border"
             />
           </div>
         </div>
