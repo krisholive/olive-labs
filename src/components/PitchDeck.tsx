@@ -75,12 +75,7 @@ const slides = [
                 <img 
                   src="/lovable-uploads/517cf38b-6e68-4241-a3b4-b5944fcc66d3.png" 
                   alt="Chat Interface" 
-                  className="w-full h-32 object-cover rounded-lg mb-2"
-                />
-                <img 
-                  src="/lovable-uploads/29fba273-b257-48f2-9f6c-2cf644767b3b.png" 
-                  alt="Nuggets Interface" 
-                  className="w-full h-32 object-cover rounded-lg"
+                  className="w-full h-40 object-cover rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-primary">Rich and Easy to Digest Insights</h3>
@@ -97,12 +92,7 @@ const slides = [
                 <img 
                   src="/lovable-uploads/4593814d-8313-4350-939f-efd45619760a.png" 
                   alt="Promotion Analysis" 
-                  className="w-full h-32 object-cover rounded-lg mb-2"
-                />
-                <img 
-                  src="/lovable-uploads/67fd74d8-f7f5-4b24-9340-91bb727e034c.png" 
-                  alt="Key Highlights Dashboard" 
-                  className="w-full h-32 object-cover rounded-lg"
+                  className="w-full h-40 object-cover rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-semibold mb-4 text-primary">Focus on Outcomes and Answers</h3>
@@ -225,6 +215,18 @@ const slides = [
             Our patented (pending) insight engine doesn't just analyze data—it understands intent, pulls external context, and delivers actionable narratives in seconds.
           </p>
         </div>
+        
+        {/* Prominent Nugget Image */}
+        <div className="mb-8 flex justify-center">
+          <div className="max-w-4xl w-full">
+            <img 
+              src="/lovable-uploads/29fba273-b257-48f2-9f6c-2cf644767b3b.png" 
+              alt="Nuggets Recommended Insight" 
+              className="w-full rounded-lg shadow-lg border"
+            />
+          </div>
+        </div>
+        
         <div className="grid md:grid-cols-4 gap-6">
           <Card className="card-interactive">
             <CardContent className="text-center p-6">
