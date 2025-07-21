@@ -65,6 +65,49 @@ const slides = [
   {
     id: 3,
     title: "The Solution",
+    subtitle: "Three Pillars of Intelligence",
+    content: (
+      <div className="space-y-8">
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="card-interactive border-primary/20">
+            <CardContent className="text-center p-8">
+              <div className="text-4xl mb-4">💬</div>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Rich and Easy to Digest Insights</h3>
+              <div className="space-y-3 text-sm text-left">
+                <p>• Conversational insights and interactive visuals</p>
+                <p>• Curated narratives for easy consumption</p>
+                <p>• Always-on insight mining in the background</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="card-interactive border-primary/20">
+            <CardContent className="text-center p-8">
+              <div className="text-4xl mb-4">🎯</div>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Focus on Outcomes and Answers</h3>
+              <div className="space-y-3 text-sm text-left">
+                <p>• Move from What → Why → What will happen → How to make it happen</p>
+                <p>• Bespoke models built at speed for specific business outcomes</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="card-interactive border-primary/20">
+            <CardContent className="text-center p-8">
+              <div className="text-4xl mb-4">🤖</div>
+              <h3 className="text-xl font-semibold mb-4 text-primary">Smart AI Readiness for Data</h3>
+              <div className="space-y-3 text-sm text-left">
+                <p>• Join disparate data sets through custom domains</p>
+                <p>• Access data through virtual connections</p>
+                <p>• Clean up data as you bring it in for insights</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: 4,
+    title: "The Game Changer",
     subtitle: "Nuggets™ - Patented Insight Engine",
     content: (
       <div className="space-y-8">
@@ -108,7 +151,7 @@ const slides = [
     )
   },
   {
-    id: 4,
+    id: 5,
     title: "Market Opportunity",
     subtitle: "Massive TAM in Enterprise Analytics",
     content: (
@@ -156,7 +199,7 @@ const slides = [
     )
   },
   {
-    id: 5,
+    id: 6,
     title: "Competitive Advantage",
     subtitle: "What Others Can't Do",
     content: (
@@ -213,7 +256,7 @@ const slides = [
     )
   },
   {
-    id: 6,
+    id: 7,
     title: "Business Model",
     subtitle: "Scalable SaaS with Enterprise Focus",
     content: (
@@ -259,7 +302,7 @@ const slides = [
     )
   },
   {
-    id: 7,
+    id: 8,
     title: "Security & Trust",
     subtitle: "Enterprise-Ready from Day One",
     content: (
@@ -297,7 +340,7 @@ const slides = [
     )
   },
   {
-    id: 8,
+    id: 9,
     title: "IP & Innovation",
     subtitle: "Protected Competitive Moat",
     content: (
@@ -338,7 +381,7 @@ const slides = [
     )
   },
   {
-    id: 9,
+    id: 10,
     title: "The Ask",
     subtitle: "Series A: $15M to Scale & Dominate",
     content: (
@@ -397,7 +440,7 @@ const slides = [
     )
   },
   {
-    id: 10,
+    id: 11,
     title: "Thank You",
     subtitle: "Questions & Discussion",
     content: (
