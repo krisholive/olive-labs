@@ -71,7 +71,18 @@ const slides = [
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="card-interactive border-primary/20">
             <CardContent className="text-center p-8">
-              <div className="text-4xl mb-4">💬</div>
+              <div className="mb-4">
+                <img 
+                  src="/lovable-uploads/517cf38b-6e68-4241-a3b4-b5944fcc66d3.png" 
+                  alt="Chat Interface" 
+                  className="w-full h-32 object-cover rounded-lg mb-2"
+                />
+                <img 
+                  src="/lovable-uploads/29fba273-b257-48f2-9f6c-2cf644767b3b.png" 
+                  alt="Nuggets Interface" 
+                  className="w-full h-32 object-cover rounded-lg"
+                />
+              </div>
               <h3 className="text-xl font-semibold mb-4 text-primary">Rich and Easy to Digest Insights</h3>
               <div className="space-y-3 text-sm text-left">
                 <p>• Conversational insights and interactive visuals</p>
@@ -82,7 +93,18 @@ const slides = [
           </Card>
           <Card className="card-interactive border-primary/20">
             <CardContent className="text-center p-8">
-              <div className="text-4xl mb-4">🎯</div>
+              <div className="mb-4">
+                <img 
+                  src="/lovable-uploads/4593814d-8313-4350-939f-efd45619760a.png" 
+                  alt="Promotion Analysis" 
+                  className="w-full h-32 object-cover rounded-lg mb-2"
+                />
+                <img 
+                  src="/lovable-uploads/67fd74d8-f7f5-4b24-9340-91bb727e034c.png" 
+                  alt="Key Highlights Dashboard" 
+                  className="w-full h-32 object-cover rounded-lg"
+                />
+              </div>
               <h3 className="text-xl font-semibold mb-4 text-primary">Focus on Outcomes and Answers</h3>
               <div className="space-y-3 text-sm text-left">
                 <p>• Move from What → Why → What will happen → How to make it happen</p>
@@ -92,7 +114,13 @@ const slides = [
           </Card>
           <Card className="card-interactive border-primary/20">
             <CardContent className="text-center p-8">
-              <div className="text-4xl mb-4">🤖</div>
+              <div className="mb-4">
+                <img 
+                  src="/lovable-uploads/7ab9077d-e9ec-4ce6-aeb6-5b00023bc69d.png" 
+                  alt="AI Assist Data Quality" 
+                  className="w-full h-40 object-cover rounded-lg"
+                />
+              </div>
               <h3 className="text-xl font-semibold mb-4 text-primary">Smart AI Readiness for Data</h3>
               <div className="space-y-3 text-sm text-left">
                 <p>• Join disparate data sets through custom domains</p>
