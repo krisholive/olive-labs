@@ -107,6 +107,86 @@ const slides = [
   },
   {
     id: 4,
+    title: "Built for 2 Worlds",
+    subtitle: "Dual Market Leadership Strategy",
+    content: (
+      <div className="space-y-8">
+        <div className="grid md:grid-cols-2 gap-12">
+          <Card className="card-interactive border-primary/20 h-full">
+            <CardContent className="p-8 h-full flex flex-col">
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-4">🎮</div>
+                <h3 className="text-2xl font-semibold text-primary mb-4">Live Services</h3>
+              </div>
+              <div className="space-y-4 flex-1">
+                <p className="text-lg mb-4">Real-time insights for gaming, apps, and platforms</p>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Instant player behavior analysis</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Performance issue detection</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Market shift response</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Revenue optimization</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+                <p className="text-sm font-semibold">Target: Gaming companies, SaaS platforms, mobile apps</p>
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="card-interactive border-primary/20 h-full">
+            <CardContent className="p-8 h-full flex flex-col">
+              <div className="text-center mb-6">
+                <div className="text-4xl mb-4">🏢</div>
+                <h3 className="text-2xl font-semibold text-primary mb-4">Enterprise Operations</h3>
+              </div>
+              <div className="space-y-4 flex-1">
+                <p className="text-lg mb-4">Self-serve analytics for business functions</p>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>HR workforce analytics</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Finance performance insights</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Legal risk assessment</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                    <span>Operations optimization</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 p-4 bg-primary/10 rounded-lg">
+                <p className="text-sm font-semibold">Target: F500 companies, mid-market enterprises</p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="text-center">
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+            <strong>Strategy:</strong> Dominate real-time analytics for live services, then expand into enterprise operations with proven ROI
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
+    id: 5,
     title: "The Game Changer",
     subtitle: "Nuggets™ - Patented Insight Engine",
     content: (
@@ -151,7 +231,7 @@ const slides = [
     )
   },
   {
-    id: 5,
+    id: 6,
     title: "Market Opportunity",
     subtitle: "Massive TAM in Enterprise Analytics",
     content: (
@@ -199,7 +279,7 @@ const slides = [
     )
   },
   {
-    id: 6,
+    id: 7,
     title: "Competitive Advantage",
     subtitle: "What Others Can't Do",
     content: (
@@ -256,7 +336,7 @@ const slides = [
     )
   },
   {
-    id: 7,
+    id: 8,
     title: "Business Model",
     subtitle: "Scalable SaaS with Enterprise Focus",
     content: (
@@ -302,7 +382,7 @@ const slides = [
     )
   },
   {
-    id: 8,
+    id: 9,
     title: "Security & Trust",
     subtitle: "Enterprise-Ready from Day One",
     content: (
@@ -340,7 +420,7 @@ const slides = [
     )
   },
   {
-    id: 9,
+    id: 10,
     title: "IP & Innovation",
     subtitle: "Protected Competitive Moat",
     content: (
@@ -381,7 +461,7 @@ const slides = [
     )
   },
   {
-    id: 10,
+    id: 11,
     title: "The Ask",
     subtitle: "Series A: $15M to Scale & Dominate",
     content: (
@@ -440,7 +520,7 @@ const slides = [
     )
   },
   {
-    id: 11,
+    id: 12,
     title: "Thank You",
     subtitle: "Questions & Discussion",
     content: (
