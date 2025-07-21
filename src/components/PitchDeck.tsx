@@ -10,15 +10,15 @@ const slides = [
     subtitle: "We See What You Don't",
     content: (
       <div className="text-center space-y-8">
-        <div className="text-6xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+        <div className="text-6xl font-bold text-[hsl(var(--olive-light))]">
           Olive AI
         </div>
-        <p className="text-2xl text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-2xl text-white/70 max-w-3xl mx-auto">
           Uncovering patterns, causes, and opportunities buried in your data—connecting them to the real world.
         </p>
-        <div className="flex items-center justify-center gap-4 text-lg">
+        <div className="flex items-center justify-center gap-4 text-lg text-white">
           <div className="flex items-center gap-2">
-            <Lightbulb className="h-6 w-6 text-primary" />
+            <Lightbulb className="h-6 w-6 text-[hsl(var(--olive-light))]" />
             <span>From Reaction to Foresight</span>
           </div>
         </div>
@@ -32,31 +32,31 @@ const slides = [
     content: (
       <div className="space-y-8">
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="card-interactive border-destructive/20">
+          <Card className="card-interactive border-red-400/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-8">
               <div className="text-4xl mb-4">🧩</div>
-              <h3 className="text-xl font-semibold mb-4">Disconnected Data Silos</h3>
-              <p>HR, finance, product, CRM, ops data live in isolation—no unified view</p>
+              <h3 className="text-xl font-semibold mb-4 text-white">Disconnected Data Silos</h3>
+              <p className="text-white/80">HR, finance, product, CRM, ops data live in isolation—no unified view</p>
             </CardContent>
           </Card>
-          <Card className="card-interactive border-destructive/20">
+          <Card className="card-interactive border-red-400/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-8">
               <div className="text-4xl mb-4">⏱️</div>
-              <h3 className="text-xl font-semibold mb-4">Manual, Delayed Insights</h3>
-              <p>Weeks of SQL queries and dashboard building for basic answers</p>
+              <h3 className="text-xl font-semibold mb-4 text-white">Manual, Delayed Insights</h3>
+              <p className="text-white/80">Weeks of SQL queries and dashboard building for basic answers</p>
             </CardContent>
           </Card>
-          <Card className="card-interactive border-destructive/20">
+          <Card className="card-interactive border-red-400/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-8">
               <div className="text-4xl mb-4">🌍</div>
-              <h3 className="text-xl font-semibold mb-4">Zero External Context</h3>
-              <p>Tools ignore market trends, weather, news—missing the real drivers</p>
+              <h3 className="text-xl font-semibold mb-4 text-white">Zero External Context</h3>
+              <p className="text-white/80">Tools ignore market trends, weather, news—missing the real drivers</p>
             </CardContent>
           </Card>
         </div>
         <div className="text-center">
-          <p className="text-xl text-muted-foreground">
-            <strong>Result:</strong> Reactive decisions, missed opportunities, and expensive analyst teams
+          <p className="text-xl text-white/70">
+            <strong className="text-white">Result:</strong> Reactive decisions, missed opportunities, and expensive analyst teams
           </p>
         </div>
       </div>
@@ -69,7 +69,7 @@ const slides = [
     content: (
       <div className="space-y-8">
         <div className="grid md:grid-cols-3 gap-8">
-          <Card className="card-interactive border-primary/20">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-8">
               <div className="mb-4">
                 <img 
@@ -78,15 +78,15 @@ const slides = [
                   className="w-full h-40 object-cover rounded-lg"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Rich and Easy to Digest Insights</h3>
-              <div className="space-y-3 text-sm text-left">
+              <h3 className="text-xl font-semibold mb-4 text-[hsl(var(--olive-light))]">Rich and Easy to Digest Insights</h3>
+              <div className="space-y-3 text-sm text-left text-white/80">
                 <p>• Conversational insights and interactive visuals</p>
                 <p>• Curated narratives for easy consumption</p>
                 <p>• Always-on insight mining in the background</p>
               </div>
             </CardContent>
           </Card>
-          <Card className="card-interactive border-primary/20">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-8">
               <div className="mb-4">
                 <img 
@@ -95,14 +95,14 @@ const slides = [
                   className="w-full h-40 object-cover rounded-lg"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Focus on Outcomes and Answers</h3>
-              <div className="space-y-3 text-sm text-left">
+              <h3 className="text-xl font-semibold mb-4 text-[hsl(var(--olive-light))]">Focus on Outcomes and Answers</h3>
+              <div className="space-y-3 text-sm text-left text-white/80">
                 <p>• Move from What → Why → What will happen → How to make it happen</p>
                 <p>• Bespoke models built at speed for specific business outcomes</p>
               </div>
             </CardContent>
           </Card>
-          <Card className="card-interactive border-primary/20">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-8">
               <div className="mb-4">
                 <img 
@@ -111,8 +111,8 @@ const slides = [
                   className="w-full h-40 object-cover rounded-lg"
                 />
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-primary">Smart AI Readiness for Data</h3>
-              <div className="space-y-3 text-sm text-left">
+              <h3 className="text-xl font-semibold mb-4 text-[hsl(var(--olive-light))]">Smart AI Readiness for Data</h3>
+              <div className="space-y-3 text-sm text-left text-white/80">
                 <p>• Join disparate data sets through custom domains</p>
                 <p>• Access data through virtual connections</p>
                 <p>• Clean up data as you bring it in for insights</p>
@@ -130,74 +130,74 @@ const slides = [
     content: (
       <div className="space-y-8">
         <div className="grid md:grid-cols-2 gap-12">
-          <Card className="card-interactive border-primary/20 h-full">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white h-full">
             <CardContent className="p-8 h-full flex flex-col">
               <div className="text-center mb-6">
                 <div className="text-4xl mb-4">🎮</div>
-                <h3 className="text-2xl font-semibold text-primary mb-4">Live Services</h3>
+                <h3 className="text-2xl font-semibold text-[hsl(var(--olive-light))] mb-4">Live Services</h3>
               </div>
               <div className="space-y-4 flex-1">
-                <p className="text-lg mb-4">Real-time insights for gaming, apps, and platforms</p>
+                <p className="text-lg mb-4 text-white/80">Real-time insights for gaming, apps, and platforms</p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Instant player behavior analysis</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">Instant player behavior analysis</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Performance issue detection</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">Performance issue detection</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Market shift response</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">Market shift response</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Revenue optimization</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">Revenue optimization</span>
                   </div>
                 </div>
               </div>
-              <div className="mt-6 p-4 bg-primary/10 rounded-lg">
-                <p className="text-sm font-semibold">Target: Gaming companies, SaaS platforms, mobile apps</p>
+              <div className="mt-6 p-4 bg-[hsl(var(--olive-light))]/20 rounded-lg">
+                <p className="text-sm font-semibold text-white">Target: Gaming companies, SaaS platforms, mobile apps</p>
               </div>
             </CardContent>
           </Card>
-          <Card className="card-interactive border-primary/20 h-full">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white h-full">
             <CardContent className="p-8 h-full flex flex-col">
               <div className="text-center mb-6">
                 <div className="text-4xl mb-4">🏢</div>
-                <h3 className="text-2xl font-semibold text-primary mb-4">Enterprise Operations</h3>
+                <h3 className="text-2xl font-semibold text-[hsl(var(--olive-light))] mb-4">Enterprise Operations</h3>
               </div>
               <div className="space-y-4 flex-1">
-                <p className="text-lg mb-4">Self-serve analytics for business functions</p>
+                <p className="text-lg mb-4 text-white/80">Self-serve analytics for business functions</p>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>HR workforce analytics</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">HR workforce analytics</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Finance performance insights</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">Finance performance insights</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Legal risk assessment</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">Legal risk assessment</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                    <span>Operations optimization</span>
+                    <div className="w-2 h-2 rounded-full bg-[hsl(var(--olive-light))]"></div>
+                    <span className="text-white/80">Operations optimization</span>
                   </div>
                 </div>
               </div>
-              <div className="mt-6 p-4 bg-primary/10 rounded-lg">
-                <p className="text-sm font-semibold">Target: F500 companies, mid-market enterprises</p>
+              <div className="mt-6 p-4 bg-[hsl(var(--olive-light))]/20 rounded-lg">
+                <p className="text-sm font-semibold text-white">Target: F500 companies, mid-market enterprises</p>
               </div>
             </CardContent>
           </Card>
         </div>
         <div className="text-center">
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            <strong>Strategy:</strong> Dominate real-time analytics for live services, then expand into enterprise operations with proven ROI
+          <p className="text-xl text-white/70 max-w-4xl mx-auto">
+            <strong className="text-white">Strategy:</strong> Dominate real-time analytics for live services, then expand into enterprise operations with proven ROI
           </p>
         </div>
       </div>
@@ -210,8 +210,8 @@ const slides = [
     content: (
       <div className="space-y-8">
         <div className="text-center mb-8">
-          <div className="text-4xl font-bold text-primary mb-4">Nuggets™</div>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-4xl font-bold text-[hsl(var(--olive-light))] mb-4">Nuggets™</div>
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Our patented (pending) insight engine doesn't just analyze data—it understands intent, pulls external context, and delivers actionable narratives in seconds.
           </p>
         </div>
@@ -228,32 +228,32 @@ const slides = [
         </div>
         
         <div className="grid md:grid-cols-4 gap-6">
-          <Card className="card-interactive">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-6">
               <div className="text-3xl mb-3">🗣️</div>
-              <h3 className="font-semibold mb-2">Natural Language</h3>
-              <p className="text-sm">Ask questions like talking to a colleague</p>
+              <h3 className="font-semibold mb-2 text-white">Natural Language</h3>
+              <p className="text-sm text-white/80">Ask questions like talking to a colleague</p>
             </CardContent>
           </Card>
-          <Card className="card-interactive">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-6">
               <div className="text-3xl mb-3">🔄</div>
-              <h3 className="font-semibold mb-2">Data Fusion</h3>
-              <p className="text-sm">Internal + external data aligned in real-time</p>
+              <h3 className="font-semibold mb-2 text-white">Data Fusion</h3>
+              <p className="text-sm text-white/80">Internal + external data aligned in real-time</p>
             </CardContent>
           </Card>
-          <Card className="card-interactive">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-6">
               <div className="text-3xl mb-3">🧠</div>
-              <h3 className="font-semibold mb-2">Pattern Recognition</h3>
-              <p className="text-sm">AI finds hidden trends and drivers</p>
+              <h3 className="font-semibold mb-2 text-white">Pattern Recognition</h3>
+              <p className="text-sm text-white/80">AI finds hidden trends and drivers</p>
             </CardContent>
           </Card>
-          <Card className="card-interactive">
+          <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
             <CardContent className="text-center p-6">
               <div className="text-3xl mb-3">📊</div>
-              <h3 className="font-semibold mb-2">Narrative Output</h3>
-              <p className="text-sm">Insight + Why + Action in every response</p>
+              <h3 className="font-semibold mb-2 text-white">Narrative Output</h3>
+              <p className="text-sm text-white/80">Insight + Why + Action in every response</p>
             </CardContent>
           </Card>
         </div>
@@ -269,37 +269,37 @@ const slides = [
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-6">
             <div className="text-center">
-              <div className="text-5xl font-bold text-primary mb-2">$274B</div>
-              <p className="text-lg text-muted-foreground">Global Analytics Market by 2030</p>
+              <div className="text-5xl font-bold text-[hsl(var(--olive-light))] mb-2">$274B</div>
+              <p className="text-lg text-white/70">Global Analytics Market by 2030</p>
             </div>
             <div className="space-y-4">
-              <div className="flex items-center gap-4">
-                <TrendingUp className="h-6 w-6 text-primary" />
+              <div className="flex items-center gap-4 text-white">
+                <TrendingUp className="h-6 w-6 text-[hsl(var(--olive-light))]" />
                 <span>25% CAGR growth rate</span>
               </div>
-              <div className="flex items-center gap-4">
-                <Target className="h-6 w-6 text-primary" />
+              <div className="flex items-center gap-4 text-white">
+                <Target className="h-6 w-6 text-[hsl(var(--olive-light))]" />
                 <span>87% of enterprises struggle with data silos</span>
               </div>
-              <div className="flex items-center gap-4">
-                <Users className="h-6 w-6 text-primary" />
+              <div className="flex items-center gap-4 text-white">
+                <Users className="h-6 w-6 text-[hsl(var(--olive-light))]" />
                 <span>Data scientist shortage: 2.7M unfilled roles</span>
               </div>
             </div>
           </div>
           <div className="space-y-6">
-            <h3 className="text-2xl font-semibold mb-4">Target Markets</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-white">Target Markets</h3>
             <div className="space-y-4">
-              <Card className="card-interactive">
+              <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
                 <CardContent className="p-4">
-                  <h4 className="font-semibold text-primary mb-2">Live Services</h4>
-                  <p className="text-sm">Gaming, apps, platforms needing real-time insights</p>
+                  <h4 className="font-semibold text-[hsl(var(--olive-light))] mb-2">Live Services</h4>
+                  <p className="text-sm text-white/80">Gaming, apps, platforms needing real-time insights</p>
                 </CardContent>
               </Card>
-              <Card className="card-interactive">
+              <Card className="card-interactive border-[hsl(var(--olive-light))]/30 bg-[hsl(var(--olive-dark))]/80 text-white">
                 <CardContent className="p-4">
-                  <h4 className="font-semibold text-primary mb-2">Enterprise Operations</h4>
-                  <p className="text-sm">HR, Finance, Legal teams needing self-serve analytics</p>
+                  <h4 className="font-semibold text-[hsl(var(--olive-light))] mb-2">Enterprise Operations</h4>
+                  <p className="text-sm text-white/80">HR, Finance, Legal teams needing self-serve analytics</p>
                 </CardContent>
               </Card>
             </div>
@@ -614,19 +614,19 @@ export default function PitchDeck() {
   const currentSlideData = slides[currentSlide];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[hsl(var(--olive-dark))] text-white">
       {/* Navigation Header */}
       {!isPresenting && (
-        <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+        <header className="border-b border-[hsl(var(--olive-light))]/20 bg-[hsl(var(--olive-dark))]/95 backdrop-blur supports-[backdrop-filter]:bg-[hsl(var(--olive-dark))]/90 sticky top-0 z-50">
           <div className="container flex h-16 items-center justify-between">
             <div className="flex items-center gap-4">
-              <h1 className="text-xl font-bold">Olive AI Pitch Deck</h1>
-              <div className="text-sm text-muted-foreground">
+              <h1 className="text-xl font-bold text-[hsl(var(--olive-light))]">Olive AI Pitch Deck</h1>
+              <div className="text-sm text-white/70">
                 Slide {currentSlide + 1} of {slides.length}
               </div>
             </div>
             <div className="flex items-center gap-2">
-              <Button variant="outline" size="sm" onClick={() => setIsPresenting(true)}>
+              <Button variant="outline" size="sm" onClick={() => setIsPresenting(true)} className="border-[hsl(var(--olive-light))] text-[hsl(var(--olive-light))] hover:bg-[hsl(var(--olive-light))] hover:text-[hsl(var(--olive-dark))]">
                 <Play className="h-4 w-4 mr-2" />
                 Present
               </Button>
@@ -638,15 +638,15 @@ export default function PitchDeck() {
       {/* Slide Navigation Dots */}
       {!isPresenting && (
         <div className="fixed left-1/2 bottom-8 transform -translate-x-1/2 z-50">
-          <div className="flex items-center gap-2 bg-background/80 backdrop-blur px-4 py-2 rounded-full border">
+          <div className="flex items-center gap-2 bg-[hsl(var(--olive-dark))]/80 backdrop-blur px-4 py-2 rounded-full border border-[hsl(var(--olive-light))]/20">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
                 className={`w-3 h-3 rounded-full transition-all ${
                   index === currentSlide 
-                    ? 'bg-primary scale-125' 
-                    : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                    ? 'bg-[hsl(var(--olive-light))] scale-125' 
+                    : 'bg-white/30 hover:bg-white/50'
                 }`}
               />
             ))}
@@ -659,10 +659,10 @@ export default function PitchDeck() {
         <div className="max-w-7xl mx-auto w-full">
           {/* Slide Header */}
           <div className="text-center mb-12 animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
               {currentSlideData.title}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground">
+            <p className="text-xl md:text-2xl text-white/70">
               {currentSlideData.subtitle}
             </p>
           </div>
@@ -680,7 +680,7 @@ export default function PitchDeck() {
           variant="outline"
           onClick={prevSlide}
           disabled={currentSlide === 0}
-          className={`${isPresenting ? 'opacity-20 hover:opacity-100' : ''} transition-opacity`}
+          className={`border-[hsl(var(--olive-light))] text-[hsl(var(--olive-light))] hover:bg-[hsl(var(--olive-light))] hover:text-[hsl(var(--olive-dark))] ${isPresenting ? 'opacity-20 hover:opacity-100' : ''} transition-opacity`}
         >
           <ChevronLeft className="h-4 w-4 mr-2" />
           Previous
@@ -690,7 +690,7 @@ export default function PitchDeck() {
           <Button
             variant="outline"
             onClick={() => setIsPresenting(false)}
-            className="opacity-20 hover:opacity-100 transition-opacity"
+            className="border-[hsl(var(--olive-light))] text-[hsl(var(--olive-light))] hover:bg-[hsl(var(--olive-light))] hover:text-[hsl(var(--olive-dark))] opacity-20 hover:opacity-100 transition-opacity"
           >
             Exit Presentation
           </Button>
@@ -700,7 +700,7 @@ export default function PitchDeck() {
           variant="outline"
           onClick={nextSlide}
           disabled={currentSlide === slides.length - 1}
-          className={`${isPresenting ? 'opacity-20 hover:opacity-100' : ''} transition-opacity`}
+          className={`border-[hsl(var(--olive-light))] text-[hsl(var(--olive-light))] hover:bg-[hsl(var(--olive-light))] hover:text-[hsl(var(--olive-dark))] ${isPresenting ? 'opacity-20 hover:opacity-100' : ''} transition-opacity`}
         >
           Next
           <ChevronRight className="h-4 w-4 ml-2" />
