@@ -17,7 +17,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 142 76% 36%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -26,15 +26,30 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 142 76% 36%;
+
+    /* Olive brand colors */
+    --olive-dark: 222 84% 4.9%;
+    --olive-light: 142 76% 36%;
+    --olive-accent: 280 100% 70%;
+    --olive-gradient: linear-gradient(135deg, hsl(var(--olive-light)), hsl(var(--olive-accent)));
+    --olive-gradient-dark: linear-gradient(135deg, hsl(var(--olive-dark)), hsl(var(--olive-light)));
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(var(--olive-light) / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--olive-light) / 0.4);
 
     --radius: 0.5rem;
 
@@ -101,5 +116,118 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero animations */
+  .hero-title {
+    @apply animate-fade-in;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+  }
+  
+  .hero-subtitle {
+    @apply animate-fade-in;
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+  }
+  
+  .hero-buttons {
+    @apply animate-fade-in;
+    animation-delay: 0.6s;
+    animation-fill-mode: both;
+  }
+
+  /* Video placeholder */
+  .video-placeholder {
+    @apply relative bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg overflow-hidden;
+    background-image: radial-gradient(circle at 50% 50%, hsl(var(--olive-light) / 0.3) 0%, transparent 50%);
+  }
+  
+  .video-placeholder::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Animation placeholder */
+  .animation-placeholder {
+    @apply relative bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg overflow-hidden;
+  }
+  
+  .animation-placeholder::after {
+    content: '';
+    @apply absolute inset-0;
+    background: var(--olive-gradient);
+    opacity: 0.1;
+    animation: pulse 2s infinite;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-olive {
+    background: var(--olive-gradient);
+  }
+  
+  .gradient-olive-dark {
+    background: var(--olive-gradient-dark);
+  }
+
+  /* Interactive cards */
+  .card-interactive {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+    transition: var(--transition-spring);
+  }
+  
+  .card-interactive:hover {
+    box-shadow: var(--shadow-elegant);
+  }
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-spring {
+    transition: var(--transition-spring);
   }
 }
