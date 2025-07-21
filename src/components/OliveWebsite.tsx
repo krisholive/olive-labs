@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { VideoPlaceholder } from "@/components/VideoPlaceholder";
@@ -6,14 +7,37 @@ import { AnimationPlaceholder } from "@/components/AnimationPlaceholder";
 import { Eye, Brain, Zap, Shield, Play, ArrowRight } from "lucide-react";
 
 export default function OliveWebsite() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    console.log("Component mounted, checking video element");
+    if (videoRef.current) {
+      console.log("Video element found, attempting to load");
+      videoRef.current.load();
+    }
+  }, []);
+
   const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    console.log("Video failed to load:", e);
+    console.log("Video failed to load:", e.currentTarget.error);
+    setVideoError(true);
+    setVideoLoaded(false);
   };
 
   const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
     console.log("Video loaded successfully");
+    setVideoLoaded(true);
+    setVideoError(false);
     const video = e.currentTarget;
     video.play().catch(err => console.log("Autoplay failed:", err));
+  };
+
+  const handleCanPlay = () => {
+    console.log("Video can play");
+    if (videoRef.current) {
+      videoRef.current.play().catch(err => console.log("Manual play failed:", err));
+    }
   };
 
   return (
@@ -21,24 +45,41 @@ export default function OliveWebsite() {
 
       {/* Hero Section with Video Background */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden py-20">
-        {/* Background Video */}
+        {/* Background Video or Fallback */}
         <div className="absolute inset-0 z-0">
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            onError={handleVideoError}
-            onLoadedData={handleVideoLoad}
-          >
-            <source src="/hero-background.mp4" type="video/mp4" />
-            {/* Fallback background */}
-            Your browser does not support the video tag.
-          </video>
-          {/* Fallback gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5" />
+          {!videoError ? (
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              onError={handleVideoError}
+              onLoadedData={handleVideoLoad}
+              onCanPlay={handleCanPlay}
+              style={{ display: videoLoaded ? 'block' : 'none' }}
+            >
+              <source src="/hero-background.mp4" type="video/mp4" />
+            </video>
+          ) : null}
+          
+          {/* Fallback gradient background - always present but only visible if video fails or hasn't loaded */}
+          <div className={`absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10 ${videoLoaded && !videoError ? 'opacity-30' : 'opacity-100'} transition-opacity duration-1000`} />
+          
+          {/* Show video placeholder if there's an error */}
+          {videoError && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <VideoPlaceholder 
+                title="Hero Background Video"
+                description="Background video placeholder"
+                aspectRatio="16:9"
+                size="xl"
+                showControls={false}
+              />
+            </div>
+          )}
         </div>
         
         {/* Hero Content */}
