@@ -6,10 +6,20 @@ import { AnimationPlaceholder } from "@/components/AnimationPlaceholder";
 import { Eye, Brain, Zap, Shield, Play, ArrowRight } from "lucide-react";
 
 export default function OliveWebsite() {
+  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    console.log("Video failed to load:", e);
+  };
+
+  const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+    console.log("Video loaded successfully");
+    const video = e.currentTarget;
+    video.play().catch(err => console.log("Autoplay failed:", err));
+  };
+
   return (
     <div className="bg-black text-white font-sans">
 
-      {/* Hero Section with Video Background Placeholder */}
+      {/* Hero Section with Video Background */}
       <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden py-20">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
@@ -19,11 +29,16 @@ export default function OliveWebsite() {
             loop
             muted
             playsInline
+            preload="auto"
+            onError={handleVideoError}
+            onLoadedData={handleVideoLoad}
           >
             <source src="/hero-background.mp4" type="video/mp4" />
-            {/* Fallback for browsers that don't support video */}
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5" />
+            {/* Fallback background */}
+            Your browser does not support the video tag.
           </video>
+          {/* Fallback gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5" />
         </div>
         
         {/* Hero Content */}
