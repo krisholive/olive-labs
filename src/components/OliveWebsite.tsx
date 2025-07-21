@@ -43,47 +43,10 @@ export default function OliveWebsite() {
   return (
     <div className="bg-black text-white font-sans">
 
-      {/* Hero Section with Video Background */}
-      <section className="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden py-20">
-        {/* Background Video or Fallback */}
-        <div className="absolute inset-0 z-0">
-          {!videoError ? (
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              onError={handleVideoError}
-              onLoadedData={handleVideoLoad}
-              onCanPlay={handleCanPlay}
-              style={{ display: videoLoaded ? 'block' : 'none' }}
-            >
-              <source src="/hero-background.mp4" type="video/mp4" />
-            </video>
-          ) : null}
-          
-          {/* Fallback gradient background - always present but only visible if video fails or hasn't loaded */}
-          <div className={`absolute inset-0 bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10 ${videoLoaded && !videoError ? 'opacity-30' : 'opacity-100'} transition-opacity duration-1000`} />
-          
-          {/* Show video placeholder if there's an error */}
-          {videoError && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <VideoPlaceholder 
-                title="Hero Background Video"
-                description="Background video placeholder"
-                aspectRatio="16:9"
-                size="xl"
-                showControls={false}
-              />
-            </div>
-          )}
-        </div>
-        
-        {/* Hero Content */}
-        <div className="relative z-10 bg-black/60 backdrop-blur-sm rounded-xl p-8">
+      {/* Hero Section - Content First, Video Below */}
+      <section className="min-h-screen flex flex-col py-20">
+        {/* Hero Content at Top */}
+        <div className="flex-shrink-0 flex flex-col justify-center items-center text-center px-6 py-16 bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10">
           <div className="hero-title">
             <h1 className="text-5xl md:text-6xl font-bold mb-4 gradient-olive bg-clip-text text-transparent">
               We See What You Don't.
@@ -106,6 +69,43 @@ export default function OliveWebsite() {
               <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
+        </div>
+
+        {/* Video Section Below */}
+        <div className="flex-grow relative overflow-hidden">
+          {!videoError ? (
+            <video
+              ref={videoRef}
+              className="w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="auto"
+              onError={handleVideoError}
+              onLoadedData={handleVideoLoad}
+              onCanPlay={handleCanPlay}
+              style={{ display: videoLoaded ? 'block' : 'none' }}
+            >
+              <source src="/hero-background.mp4" type="video/mp4" />
+            </video>
+          ) : null}
+          
+          {/* Fallback background for video area */}
+          <div className={`absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 ${videoLoaded && !videoError ? 'opacity-30' : 'opacity-100'} transition-opacity duration-1000`} />
+          
+          {/* Show video placeholder if there's an error */}
+          {videoError && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <VideoPlaceholder 
+                title="Hero Background Video"
+                description="Background video placeholder"
+                aspectRatio="16:9"
+                size="xl"
+                showControls={false}
+              />
+            </div>
+          )}
         </div>
       </section>
 
