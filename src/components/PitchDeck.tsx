@@ -617,6 +617,7 @@ export default function PitchDeck() {
     };
 
     window.addEventListener('keydown', handleKeyDown);
+    console.log("PitchDeck component mounted");
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 

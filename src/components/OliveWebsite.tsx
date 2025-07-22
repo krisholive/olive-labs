@@ -1,369 +1,266 @@
-
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { VideoPlaceholder } from "@/components/VideoPlaceholder";
-import { AnimationPlaceholder } from "@/components/AnimationPlaceholder";
-import { Eye, Brain, Zap, Shield, Play, ArrowRight } from "lucide-react";
-import Header from "@/components/Header";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Play } from "lucide-react";
 
-export default function OliveWebsite() {
-  const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoError, setVideoError] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+const Header = () => {
+  return (
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-14 items-center">
+        <a className="mr-6 font-semibold" href="#">
+          Olive AI
+        </a>
+        <div className="ml-auto flex items-center space-x-4 sm:space-x-6">
+          <Button size="sm" variant="ghost">
+            Sign In
+          </Button>
+          <Button size="sm">Get Started</Button>
+        </div>
+      </div>
+    </header>
+  );
+};
 
-  useEffect(() => {
-    console.log("Component mounted, checking video element");
-    if (videoRef.current) {
-      console.log("Video element found, attempting to load");
-      videoRef.current.load();
-    }
-  }, []);
-
-  const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    console.log("Video failed to load:", e.currentTarget.error);
-    setVideoError(true);
-    setVideoLoaded(false);
-  };
-
-  const handleVideoLoad = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
-    console.log("Video loaded successfully");
-    setVideoLoaded(true);
-    setVideoError(false);
-    const video = e.currentTarget;
-    video.play().catch(err => console.log("Autoplay failed:", err));
-  };
-
-  const handleCanPlay = () => {
-    console.log("Video can play");
-    if (videoRef.current) {
-      videoRef.current.play().catch(err => console.log("Manual play failed:", err));
-    }
-  };
+const OliveWebsite = () => {
+  const faqs = [
+    {
+      question: "What is Olive AI?",
+      answer:
+        "Olive AI is a cutting-edge platform that transforms raw data into actionable insights, helping businesses make smarter decisions.",
+    },
+    {
+      question: "How does Olive AI work?",
+      answer:
+        "Olive AI uses advanced algorithms and machine learning to analyze data, identify patterns, and provide clear, concise narratives.",
+    },
+    {
+      question: "Is Olive AI suitable for my business?",
+      answer:
+        "Yes, Olive AI is designed to be versatile and can be tailored to fit the unique needs of various industries and business sizes.",
+    },
+  ];
 
   return (
-    <div className="bg-black text-white font-sans">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
 
-      {/* Hero Section - Content First, Video Below */}
-      <section className="min-h-screen flex flex-col pt-24 pb-20">
-        {/* Hero Content at Top */}
-        <div className="flex-shrink-0 flex flex-col justify-center items-center text-center px-6 py-16 bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10">
-          <div className="hero-title">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 gradient-olive bg-clip-text text-transparent">
-              We See What You Don't.
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="container grid items-center gap-12 py-24 md:py-32 lg:py-48">
+          <div className="flex flex-col gap-4 md:gap-6">
+            <h1 className="font-semibold text-3xl leading-tight tracking-tighter md:text-5xl lg:text-6xl">
+              Unlock the Power of Your Data with Olive AI
             </h1>
-          </div>
-          
-          <div className="hero-subtitle">
-            <p className="text-xl mb-6 max-w-2xl">
-              Olive uncovers patterns, causes, and opportunities buried in your data—and connects them to the real world. So you can move from reaction to foresight.
+            <p className="max-w-[700px] text-lg text-muted-foreground">
+              Transform your raw data into actionable insights. Olive AI helps
+              you make smarter decisions and stay ahead of the competition.
             </p>
-          </div>
-          
-          <div className="hero-buttons flex gap-4 flex-wrap justify-center">
-            <Button variant="default" size="lg" className="gradient-olive border-0 hover:scale-105 transition-spring gap-2">
-              <Play className="w-4 h-4" />
-              See Nuggets in Action
-            </Button>
-            <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-spring gap-2">
-              Request a Demo
-              <ArrowRight className="w-4 h-4" />
-            </Button>
-          </div>
-        </div>
-
-        {/* Video Section Below */}
-        <div className="flex-grow relative overflow-hidden">
-          {!videoError ? (
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              onError={handleVideoError}
-              onLoadedData={handleVideoLoad}
-              onCanPlay={handleCanPlay}
-              style={{ display: videoLoaded ? 'block' : 'none' }}
-            >
-              <source src="/hero-background.mp4" type="video/mp4" />
-            </video>
-          ) : null}
-          
-          {/* Fallback background for video area */}
-          <div className={`absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 ${videoLoaded && !videoError ? 'opacity-30' : 'opacity-100'} transition-opacity duration-1000`} />
-          
-          {/* Show video placeholder if there's an error */}
-          {videoError && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <VideoPlaceholder 
-                title="Hero Background Video"
-                description="Background video placeholder"
-                aspectRatio="16:9"
-                size="xl"
-                showControls={false}
-              />
+            <div className="space-x-3">
+              <Button size="lg">Get Started</Button>
+              <Button size="lg" variant="outline">
+                Learn More
+              </Button>
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* Why Olive Section */}
-      <section className="min-h-screen bg-white text-black py-20 px-10 relative flex flex-col justify-center">
-        <div className="absolute top-10 right-10">
-          <AnimationPlaceholder 
-            type="sparkles" 
-            title="Data Visualization"
-            description="Animated data connections"
-            size="md"
+          </div>
+          <img
+            alt="Hero"
+            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-[800px]"
+            height="500"
+            src="/placeholder.svg"
+            width="800"
           />
         </div>
         
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          Traditional Tools Stop at What. Olive Shows You Why—and What's Next.
-        </h2>
-        <p className="text-center max-w-3xl mx-auto mb-12 text-lg">
-          Most tools can tell you what happened. Few can tell you why. None can tell you what to do about it. Olive changes that—with always-on insight mining that explains your metrics, connects them to real-world factors, and guides your next move.
-        </p>
-        
-        <div className="grid md:grid-cols-3 gap-6 text-center">
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
-            <CardContent className="p-6">
-              <div className="mb-4">
-                <AnimationPlaceholder 
-                  type="target" 
-                  title="Data Silos Animation"
-                  description="Connecting disconnected sources"
-                  size="sm"
-                />
-              </div>
-              <h3 className="font-semibold mb-2">🧩 Disconnected Data Sources</h3>
-              <p>Your data lives in silos—HR, finance, product, CRM, ops. Olive unifies it, no replatforming needed.</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
-            <CardContent className="p-6">
-              <div className="mb-4">
-                <AnimationPlaceholder 
-                  type="zap" 
-                  title="Real-time Processing"
-                  description="Lightning-fast insights"
-                  size="sm"
-                />
-              </div>
-              <h3 className="font-semibold mb-2">⏱️ Manual, Delayed Insights</h3>
-              <p>Insights shouldn't take weeks of SQL and dashboards. Olive mines them in real time, automatically.</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
-            <CardContent className="p-6">
-              <div className="mb-4">
-                <AnimationPlaceholder 
-                  type="pulse" 
-                  title="External Context"
-                  description="World events integration"
-                  size="sm"
-                />
-              </div>
-              <h3 className="font-semibold mb-2">🌍 Zero Context from the Outside World</h3>
-              <p>Most tools ignore market trends, weather, news, and events. Olive brings them in to explain what's really driving change.</p>
-            </CardContent>
-          </Card>
+        {/* Add a link to the pitch deck */}
+        <div className="absolute bottom-8 right-8 z-10">
+          <a href="/pitch" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors">
+            <Play className="h-4 w-4" />
+            View Pitch Deck
+          </a>
         </div>
       </section>
 
-      {/* Nuggets Section with Demo Video */}
-      <section className="min-h-screen py-20 px-10 bg-gray-900 relative flex flex-col justify-center">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-            Nuggets™: From Chaos to Clarity
-          </h2>
-          <p className="text-center max-w-3xl mx-auto mb-12 text-lg">
-            Nuggets™ is Olive's patented (pending) insight engine. It doesn't just analyze data—it understands your intent, pulls in context from the outside world, and delivers fully-formed, actionable narratives in seconds.
-          </p>
-          
-          {/* Demo Video */}
-          <div className="mb-12">
-            <video
-              className="w-full aspect-video rounded-lg shadow-2xl"
-              controls
-              poster="/nuggets-demo-thumbnail.jpg"
-            >
-              <source src="/nuggets-demo.mp4" type="video/mp4" />
-              <div className="w-full aspect-video bg-gray-800 rounded-lg flex items-center justify-center">
-                <p className="text-gray-400">Your browser doesn't support video playback</p>
-              </div>
-            </video>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
-            {[
-              { icon: "🗣️", title: "Natural Language Input", desc: "Ask Olive a question—just like you would ask a colleague." },
-              { icon: "🔗", title: "Data Fusion", desc: "Internal + external data pulled and aligned in real time." },
-              { icon: "🧠", title: "Pattern Recognition", desc: "Behind the scenes, Olive finds trends and drivers." },
-              { icon: "📊", title: "Narrative Output", desc: "Each Nugget includes Insight, Why, and Action." }
-            ].map((item, index) => (
-              <Card key={index} className="card-interactive bg-gray-800 border-primary/20 hover:border-primary/40">
-                <CardContent className="p-6">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="font-semibold mb-2">{index + 1}️⃣ {item.title}</h3>
-                  <p className="text-sm text-gray-300">{item.desc}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="min-h-screen py-20 px-10 bg-white text-black flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Built for Two Worlds</h2>
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
-            <CardContent className="p-8">
-              <div className="mb-6">
-                <AnimationPlaceholder 
-                  type="zap" 
-                  title="Live Services Animation"
-                  description="Real-time gaming analytics"
-                  size="md"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-primary">Live Services</h3>
-              <p className="text-lg">Real-time insights for gaming, apps, platforms. Respond instantly to player behavior, performance issues, or market shifts.</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
-            <CardContent className="p-8">
-              <div className="mb-6">
-                <AnimationPlaceholder 
-                  type="target" 
-                  title="Enterprise Dashboard"
-                  description="Self-serve analytics"
-                  size="md"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold mb-4 text-primary">Enterprise Operations</h3>
-              <p className="text-lg">Self-serve analytics for HR, Finance, Legal, and beyond—no analysts required.</p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Feature Comparison Section */}
-      <section className="min-h-screen py-20 px-10 bg-gray-100 text-black flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-          What Olive Can Do That Other Tools Can't
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-center max-w-5xl mx-auto">
-          {[
-            "Automated Insight Generation",
-            "External Data Correlation", 
-            "Narrative Storytelling (Insight / Why / Action)",
-            "Functional Personalization by Role",
-            "Real-Time Natural Language Queries",
-            "Contextual Pattern Recognition"
-          ].map((feature, index) => (
-            <Card key={index} className="card-interactive border-primary/20 hover:border-primary/40 hover:bg-primary/5">
-              <CardContent className="p-6 flex items-center justify-center">
-                <span className="text-primary mr-2">✅</span>
-                <span className="font-medium">{feature}</span>
+      {/* Features Section */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="border-none shadow-md">
+              <CardHeader>
+                <CardTitle>Real-Time Analytics</CardTitle>
+                <CardDescription>
+                  Get up-to-the-minute insights into your business performance.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Monitor key metrics and identify trends as they happen.
+                </p>
               </CardContent>
             </Card>
-          ))}
+
+            <Card className="border-none shadow-md">
+              <CardHeader>
+                <CardTitle>Automated Reporting</CardTitle>
+                <CardDescription>
+                  Generate comprehensive reports with just a few clicks.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Save time and resources with automated report generation.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-md">
+              <CardHeader>
+                <CardTitle>Customizable Dashboards</CardTitle>
+                <CardDescription>
+                  Create personalized dashboards to track the metrics that
+                  matter most to you.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Tailor your data visualization to meet your specific needs.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="min-h-screen py-20 px-10 bg-white text-black flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">From Question to Clarity in Seconds</h2>
-        <div className="grid md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
-          {[
-            { icon: "🗣️", title: "Ask", desc: "Use natural language—Olive interprets your intent with no code." },
-            { icon: "🧠", title: "Analyze", desc: "Fuses internal and external data contextually, in real time." },
-            { icon: "🚀", title: "Act", desc: "Delivers a Nugget with Insight, Why, and Action—all explainable." }
-          ].map((step, index) => (
-            <Card key={index} className="card-interactive border-primary/20 hover:border-primary/40">
-              <CardContent className="p-8">
-                <div className="text-6xl mb-6">{step.icon}</div>
-                <h3 className="text-2xl font-bold mb-4 text-primary">{step.title}</h3>
-                <p className="text-lg">{step.desc}</p>
-                <div className="mt-6">
-                  <AnimationPlaceholder 
-                    type={index === 0 ? "sparkles" : index === 1 ? "zap" : "target"}
-                    title={`${step.title} Process`}
-                    description="Interactive workflow animation"
-                    size="sm"
+      {/* Testimonials Section */}
+      <section className="py-16 md:py-24 bg-secondary">
+        <div className="container">
+          <h2 className="mb-8 text-3xl font-semibold text-center">
+            What Our Clients Say
+          </h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            <Card className="border-none shadow-md">
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  "Olive AI has revolutionized the way we analyze data. The
+                  insights we've gained have been invaluable."
+                </p>
+                <CardFooter className="flex items-center">
+                  <img
+                    alt="Client"
+                    className="mr-4 h-10 w-10 rounded-full"
+                    height="40"
+                    src="/placeholder.svg"
+                    width="40"
+                  />
+                  <div>
+                    <CardTitle>John Doe</CardTitle>
+                    <CardDescription>CEO, Example Company</CardDescription>
+                  </div>
+                </CardFooter>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-md">
+              <CardContent>
+                <p className="mb-4 text-muted-foreground">
+                  "The automated reporting feature has saved us countless hours.
+                  We can now focus on making data-driven decisions."
+                </p>
+                <CardFooter className="flex items-center">
+                  <img
+                    alt="Client"
+                    className="mr-4 h-10 w-10 rounded-full"
+                    height="40"
+                    src="/placeholder.svg"
+                    width="40"
+                  />
+                  <div>
+                    <CardTitle>Jane Smith</CardTitle>
+                    <CardDescription>Marketing Manager, Sample Corp</CardDescription>
+                  </div>
+                </CardFooter>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <h2 className="mb-8 text-3xl font-semibold text-center">
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible>
+            {faqs.map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`}>
+                <AccordionTrigger>{faq.question}</AccordionTrigger>
+                <AccordionContent>{faq.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-16 md:py-24 bg-accent">
+        <div className="container">
+          <h2 className="mb-8 text-3xl font-semibold text-center">
+            Contact Us
+          </h2>
+          <Card className="max-w-lg mx-auto border-none shadow-md">
+            <CardContent>
+              <form className="grid gap-4">
+                <div className="grid gap-2">
+                  <Label htmlFor="name">Name</Label>
+                  <Input id="name" placeholder="Your Name" type="text" />
+                </div>
+                <div className="grid gap-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    placeholder="Your Email"
+                    type="email"
                   />
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Security Section */}
-      <section className="min-h-screen py-20 px-10 bg-gray-900 flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Built for Trust from Day One</h2>
-        <div className="grid md:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
-          {[
-            "SOC 2 Type II Certified",
-            "GDPR Compliant", 
-            "Transparent AI + Role-Based Access"
-          ].map((cert, index) => (
-            <Card key={index} className="card-interactive bg-gray-800 border-primary/20 hover:border-primary/40">
-              <CardContent className="p-8 flex flex-col items-center">
-                <Shield className="w-12 h-12 text-primary mb-4" />
-                <span className="text-primary mr-2">✅</span>
-                <span className="font-semibold text-lg">{cert}</span>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Patent Section */}
-      <section className="min-h-screen py-20 px-10 bg-white text-black text-center flex flex-col justify-center">
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
-            <AnimationPlaceholder 
-              type="sparkles" 
-              title="Innovation Engine"
-              description="Proprietary Nuggets™ technology"
-              size="lg"
-              className="mx-auto"
-            />
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Innovation You Can Trust</h2>
-          <p className="max-w-2xl mx-auto text-lg">
-            At the heart of Olive is a new way of thinking about insights—powered by our proprietary engine: Nuggets™. We've begun the patent process to protect the unique architecture that makes this possible.
-          </p>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="min-h-screen py-20 px-10 bg-black text-white text-center relative overflow-hidden flex flex-col justify-center">
-        <div className="absolute inset-0 gradient-olive-dark opacity-20"></div>
-        <div className="relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">See Olive in Action</h2>
-          <p className="mb-8 text-xl">Your data already has the answers. Olive is how you hear them.</p>
-          <Button size="lg" className="gradient-olive border-0 hover:scale-105 transition-spring text-lg px-8 py-4">
-            Request a Demo
-          </Button>
+                <div className="grid gap-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Input
+                    id="message"
+                    placeholder="Your Message"
+                    type="text"
+                    className="min-h-[100px]"
+                  />
+                </div>
+                <Button>Send Message</Button>
+              </form>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-gray-300 py-10 text-center text-sm">
-        <div>© 2025 Olive AI, Inc. • Product • Solutions • Security • Privacy</div>
-        <div className="mt-2">Olive™ and Nuggets™ are trademarks of Olive AI, Inc.</div>
+      <footer className="py-8 text-center text-muted-foreground">
+        <div className="container">
+          <p>© 2024 Olive AI. All rights reserved.</p>
+        </div>
       </footer>
     </div>
   );
-}
+};
+
+export default OliveWebsite;
