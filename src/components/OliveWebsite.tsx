@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { VideoPlaceholder } from "@/components/VideoPlaceholder";
 import { AnimationPlaceholder } from "@/components/AnimationPlaceholder";
 import { Eye, Brain, Zap, Shield, Play, ArrowRight } from "lucide-react";
+import Header from "@/components/Header";
 
 export default function OliveWebsite() {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -42,9 +43,10 @@ export default function OliveWebsite() {
 
   return (
     <div className="bg-black text-white font-sans">
+      <Header />
 
       {/* Hero Section - Content First, Video Below */}
-      <section className="min-h-screen flex flex-col py-20">
+      <section className="min-h-screen flex flex-col pt-24 pb-20">
         {/* Hero Content at Top */}
         <div className="flex-shrink-0 flex flex-col justify-center items-center text-center px-6 py-16 bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10">
           <div className="hero-title">
