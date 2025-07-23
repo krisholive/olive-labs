@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -285,14 +284,6 @@ const slides = [
               <div className="flex items-center gap-4 text-white">
                 <Users className="h-6 w-6 text-[hsl(var(--olive-light))]" />
                 <span>Data scientist shortage: 2.7M unfilled roles</span>
-              </div>
-            </div>
-            
-            {/* Added focus statement with border */}
-            <div className="mt-8 p-4 border-2 border-[hsl(var(--olive-light))] rounded-lg bg-[hsl(var(--olive-dark))]/50 text-white">
-              <div className="flex items-center gap-2">
-                <Target className="h-5 w-5 text-[hsl(var(--olive-light))]" />
-                <span className="font-semibold">Our Initial Focus: $5B+ serviceable wedge in live services + ops analytics</span>
               </div>
             </div>
           </div>
@@ -617,7 +608,6 @@ export default function PitchDeck() {
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    console.log("PitchDeck component mounted");
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
