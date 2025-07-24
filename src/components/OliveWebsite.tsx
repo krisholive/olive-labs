@@ -322,9 +322,9 @@ export default function OliveWebsite() {
                 <div className="flex flex-col items-center justify-center flex-1 space-y-4">
                   <Shield className="w-16 h-16 text-primary flex-shrink-0" />
                   <div className="w-full border-t border-primary/20"></div>
-                  <div className="flex items-center justify-center space-x-2">
-                    <span className="text-primary text-lg">✅</span>
-                    <span className="font-semibold text-base text-white leading-tight max-w-[180px]">{cert}</span>
+                  <div className="flex items-center justify-center space-x-3">
+                    <span className="text-primary text-xl leading-none flex items-center">✅</span>
+                    <span className="font-semibold text-base text-white leading-tight max-w-[160px] flex items-center">{cert}</span>
                   </div>
                 </div>
               </CardContent>
