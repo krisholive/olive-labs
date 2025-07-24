@@ -211,7 +211,7 @@ export default function OliveWebsite() {
               <Card key={index} className="card-interactive bg-gray-800 border-primary/20 hover:border-primary/40">
                 <CardContent className="p-6">
                   <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="font-semibold mb-2">{index + 1}️⃣ {item.title}</h3>
+                  <h3 className="font-semibold mb-2 text-white">{index + 1}️⃣ {item.title}</h3>
                   <p className="text-sm text-gray-300">{item.desc}</p>
                 </CardContent>
               </Card>
