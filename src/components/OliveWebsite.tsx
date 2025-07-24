@@ -321,7 +321,7 @@ export default function OliveWebsite() {
               <CardContent className="p-8 flex flex-col items-center">
                 <Shield className="w-12 h-12 text-primary mb-4" />
                 <span className="text-primary mr-2">✅</span>
-                <span className="font-semibold text-lg">{cert}</span>
+                <span className="font-semibold text-lg text-white">{cert}</span>
               </CardContent>
             </Card>
           ))}
