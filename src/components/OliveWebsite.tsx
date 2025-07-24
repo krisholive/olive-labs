@@ -50,7 +50,7 @@ export default function OliveWebsite() {
         {/* Hero Content at Top */}
         <div className="flex-shrink-0 flex flex-col justify-center items-center text-center px-6 py-16 bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10">
           <div className="hero-title">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 gradient-olive bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-pink-300">
               We See What You Don't.
             </h1>
           </div>
