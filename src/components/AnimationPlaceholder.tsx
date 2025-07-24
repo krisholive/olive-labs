@@ -34,11 +34,13 @@ export function AnimationPlaceholder({
   const getAnimation = () => {
     switch (type) {
       case "pulse":
-        return "animate-pulse";
+        return "animate-gentle-pulse";
       case "zap":
-        return "animate-bounce";
+        return "animate-electric";
       case "target":
-        return "animate-ping";
+        return "animate-target-pulse";
+      case "sparkles":
+        return "animate-sparkle";
       default:
         return "animate-float";
     }

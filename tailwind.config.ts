@@ -110,6 +110,54 @@ export default {
 					'100%': {
 						transform: 'translateX(100%)'
 					}
+				},
+				'sparkle': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1) rotate(0deg)'
+					},
+					'50%': {
+						opacity: '0.7',
+						transform: 'scale(1.1) rotate(180deg)'
+					}
+				},
+				'electric': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'25%': {
+						opacity: '0.8',
+						transform: 'scale(1.05) translateX(-2px)'
+					},
+					'75%': {
+						opacity: '0.8',
+						transform: 'scale(1.05) translateX(2px)'
+					}
+				},
+				'target-pulse': {
+					'0%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'scale(1.2)',
+						opacity: '0.7'
+					},
+					'100%': {
+						transform: 'scale(1)',
+						opacity: '1'
+					}
+				},
+				'gentle-pulse': {
+					'0%, 100%': {
+						opacity: '1',
+						transform: 'scale(1)'
+					},
+					'50%': {
+						opacity: '0.8',
+						transform: 'scale(1.05)'
+					}
 				}
 			},
 			animation: {
@@ -117,7 +165,11 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out forwards',
 				'float': 'float 3s ease-in-out infinite',
-				'shimmer': 'shimmer 2s infinite'
+				'shimmer': 'shimmer 2s infinite',
+				'sparkle': 'sparkle 2s ease-in-out infinite',
+				'electric': 'electric 1.5s ease-in-out infinite',
+				'target-pulse': 'target-pulse 2s ease-in-out infinite',
+				'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite'
 			}
 		}
 	},
