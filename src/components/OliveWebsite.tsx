@@ -310,18 +310,23 @@ export default function OliveWebsite() {
 
       {/* Security Section */}
       <section className="min-h-screen py-20 px-10 bg-gray-900 flex flex-col justify-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Built for Trust from Day One</h2>
-        <div className="grid md:grid-cols-3 gap-6 text-center max-w-4xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Built for Trust from Day One</h2>
+        <div className="grid md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
           {[
             "SOC 2 Type II Certified",
             "GDPR Compliant", 
             "Transparent AI + Role-Based Access"
           ].map((cert, index) => (
-            <Card key={index} className="card-interactive bg-gray-800 border-primary/20 hover:border-primary/40">
-              <CardContent className="p-8 flex flex-col items-center">
-                <Shield className="w-12 h-12 text-primary mb-4" />
-                <span className="text-primary mr-2">✅</span>
-                <span className="font-semibold text-lg text-white">{cert}</span>
+            <Card key={index} className="card-interactive bg-gray-800 border-primary/20 hover:border-primary/40 h-48 flex">
+              <CardContent className="p-6 flex flex-col items-center justify-center text-center w-full">
+                <div className="flex flex-col items-center justify-center flex-1 space-y-4">
+                  <Shield className="w-16 h-16 text-primary flex-shrink-0" />
+                  <div className="w-full border-t border-primary/20"></div>
+                  <div className="flex items-center justify-center space-x-2">
+                    <span className="text-primary text-lg">✅</span>
+                    <span className="font-semibold text-base text-white leading-tight max-w-[180px]">{cert}</span>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           ))}
