@@ -130,47 +130,50 @@ export default function OliveWebsite() {
         </p>
         
         <div className="grid md:grid-cols-3 gap-6 text-center">
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
+          <Card className="card-interactive border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300 group">
             <CardContent className="p-6">
               <div className="mb-4">
                 <AnimationPlaceholder 
-                  type="target" 
+                  type="plug-disconnect" 
                   title="Data Silos Animation"
                   description="Connecting disconnected sources"
                   size="sm"
+                  scrollAnimation="fade-up"
                 />
               </div>
-              <h3 className="font-semibold mb-2">🧩 Disconnected Data Sources</h3>
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300">🧩 Disconnected Data Sources</h3>
               <p>Your data lives in silos—HR, finance, product, CRM, ops. Olive unifies it, no replatforming needed.</p>
             </CardContent>
           </Card>
           
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
+          <Card className="card-interactive border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300 group">
             <CardContent className="p-6">
               <div className="mb-4">
                 <AnimationPlaceholder 
-                  type="zap" 
+                  type="clock-tick" 
                   title="Real-time Processing"
                   description="Lightning-fast insights"
                   size="sm"
+                  scrollAnimation="bounce-in-bottom"
                 />
               </div>
-              <h3 className="font-semibold mb-2">⏱️ Manual, Delayed Insights</h3>
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300">⏱️ Manual, Delayed Insights</h3>
               <p>Insights shouldn't take weeks of SQL and dashboards. Olive mines them in real time, automatically.</p>
             </CardContent>
           </Card>
           
-          <Card className="card-interactive border-primary/20 hover:border-primary/40">
+          <Card className="card-interactive border-primary/20 hover:border-primary/40 hover:shadow-lg transition-all duration-300 group">
             <CardContent className="p-6">
               <div className="mb-4">
                 <AnimationPlaceholder 
-                  type="pulse" 
+                  type="globe-rotate" 
                   title="External Context"
                   description="World events integration"
                   size="sm"
+                  scrollAnimation="slide-in-right"
                 />
               </div>
-              <h3 className="font-semibold mb-2">🌍 Zero Context from the Outside World</h3>
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300">🌍 Zero Context from the Outside World</h3>
               <p>Most tools ignore market trends, weather, news, and events. Olive brings them in to explain what's really driving change.</p>
             </CardContent>
           </Card>

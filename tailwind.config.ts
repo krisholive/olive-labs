@@ -158,6 +158,73 @@ export default {
 						opacity: '0.8',
 						transform: 'scale(1.05)'
 					}
+				},
+				'plug-disconnect': {
+					'0%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					},
+					'50%': {
+						transform: 'translateX(3px)',
+						opacity: '0.8'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
+				},
+				'clock-tick': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'25%': {
+						transform: 'rotate(90deg)'
+					},
+					'100%': {
+						transform: 'rotate(0deg)'
+					}
+				},
+				'globe-rotate': {
+					'0%': {
+						transform: 'rotateY(0deg)'
+					},
+					'100%': {
+						transform: 'rotateY(360deg)'
+					}
+				},
+				'fade-up': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px) scale(0.95)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0) scale(1)'
+					}
+				},
+				'bounce-in-bottom': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(30px) scale(0.9)'
+					},
+					'60%': {
+						opacity: '1',
+						transform: 'translateY(-5px) scale(1.02)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0) scale(1)'
+					}
+				},
+				'slide-in-right': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(30px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
 				}
 			},
 			animation: {
@@ -169,7 +236,13 @@ export default {
 				'sparkle': 'sparkle 2s ease-in-out infinite',
 				'electric': 'electric 1.5s ease-in-out infinite',
 				'target-pulse': 'target-pulse 2s ease-in-out infinite',
-				'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite'
+				'gentle-pulse': 'gentle-pulse 3s ease-in-out infinite',
+				'plug-disconnect': 'plug-disconnect 0.6s ease-in-out',
+				'clock-tick': 'clock-tick 0.5s ease-in-out',
+				'globe-rotate': 'globe-rotate 4s linear infinite',
+				'fade-up': 'fade-up 0.6s ease-out forwards',
+				'bounce-in-bottom': 'bounce-in-bottom 0.7s ease-out forwards',
+				'slide-in-right': 'slide-in-right 0.6s ease-out forwards'
 			}
 		}
 	},

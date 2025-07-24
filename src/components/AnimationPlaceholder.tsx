@@ -1,12 +1,13 @@
-import { Sparkles, Zap, Target } from "lucide-react";
+import { Sparkles, Zap, Target, Clock, Globe, Plug } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface AnimationPlaceholderProps {
-  type?: "sparkles" | "zap" | "target" | "pulse";
+  type?: "sparkles" | "zap" | "target" | "pulse" | "plug-disconnect" | "clock-tick" | "globe-rotate";
   title?: string;
   description?: string;
   size?: "sm" | "md" | "lg";
   className?: string;
+  scrollAnimation?: "fade-up" | "bounce-in-bottom" | "slide-in-right";
 }
 
 export function AnimationPlaceholder({ 
@@ -14,13 +15,17 @@ export function AnimationPlaceholder({
   title = "Animation Placeholder", 
   description = "Interactive animation will be displayed here",
   size = "md",
-  className 
+  className,
+  scrollAnimation
 }: AnimationPlaceholderProps) {
   const iconMap = {
     sparkles: Sparkles,
     zap: Zap,
     target: Target,
-    pulse: Sparkles
+    pulse: Sparkles,
+    "plug-disconnect": Plug,
+    "clock-tick": Clock,
+    "globe-rotate": Globe
   };
 
   const sizeClasses = {
@@ -29,7 +34,7 @@ export function AnimationPlaceholder({
     lg: "h-40 w-40"
   };
 
-  const Icon = iconMap[type];
+  const Icon = iconMap[type] || Sparkles;
 
   const getAnimation = () => {
     switch (type) {
@@ -41,6 +46,12 @@ export function AnimationPlaceholder({
         return "animate-target-pulse";
       case "sparkles":
         return "animate-sparkle";
+      case "plug-disconnect":
+        return "hover:animate-plug-disconnect";
+      case "clock-tick":
+        return "hover:animate-clock-tick";
+      case "globe-rotate":
+        return "hover:animate-globe-rotate";
       default:
         return "animate-float";
     }
@@ -50,6 +61,7 @@ export function AnimationPlaceholder({
     <div className={cn(
       "animation-placeholder flex flex-col items-center justify-center text-center p-6 border-2 border-dashed border-primary/30 rounded-lg",
       sizeClasses[size],
+      scrollAnimation && `animate-${scrollAnimation}`,
       className
     )}>
       <div className={`${getAnimation()} mb-3`}>
